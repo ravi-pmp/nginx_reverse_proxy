@@ -1,0 +1,12 @@
+upstream myapp1 {
+           server server1.ravi.local;
+           server server2.ravi.local;
+       }
+
+server {
+
+	  listen 8050;
+	  location /test {
+	      proxy_pass http://myapp1;
+	}
+}
